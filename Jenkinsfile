@@ -40,6 +40,7 @@ pipeline {
                sh 'ls'
                sh 'kubectl apply -f ./Kubernetes/demoapp1.yaml --namespace ingress-basic'
                sh 'kubectl apply -f ./Kubernetes/demoapp2.yaml --namespace ingress-basic'
+               sh 'kubectl apply -f ./ingress-routes.yaml --namespace ingress-basic'
                }
        }
     }
