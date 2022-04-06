@@ -37,8 +37,8 @@ pipeline {
        stage('Deploying application')
        {
            steps{
-               sh 'kubectl apply -f ./kubernetes/demoapp1.yaml --namespace ingress-basic'
-               sh 'kubectl apply -f ./kubernetes/demoapp2.yaml --namespace ingress-basic'
+               sh 'kubectl apply -f ./Kubernetes/demoapp1.yaml --namespace ingress-basic'
+               sh 'kubectl apply -f ./Kubernetes/demoapp2.yaml --namespace ingress-basic'
                }
        }
     }
