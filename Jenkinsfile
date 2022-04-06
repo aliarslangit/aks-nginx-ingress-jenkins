@@ -17,7 +17,7 @@ pipeline {
         stage('Git checkout') { 
             steps{
                 sh 'whoami'
-                git branch: 'main', credentialsId: 'github', url: 'https://github.com/aliarslangit/Nodejs-aks-jenkins.git'
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/aliarslangit/aks-nginx-jenkins.git'
         }
         }
     stage('Installing Azure Modules') {
