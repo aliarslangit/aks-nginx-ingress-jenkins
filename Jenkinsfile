@@ -50,11 +50,9 @@ pipeline {
        stage('Deploying application')
        {
            steps{
-               sh 'kubectl apply -f ./kubernetes/hellochart/templates/deployment.yaml --namespace ingress-basic'
-               sh 'kubectl apply -f ./kubernetes/hellochart/templates/service.yaml --namespace ingress-basic'
-               sh 'kubectl apply -f ./kubernetes/hellochart/templates/ingress.yaml --namespace ingress-basic'
-               //sh 'helm install example ./kubernetes/hellochart --namespace ingress-basic'
-           }
+               sh 'kubectl apply -f ./kubernetes/demoapp1.yaml --namespace ingress-basic'
+               sh 'kubectl apply -f ./kubernetes/demoapp2.yaml --namespace ingress-basic'
+               }
        }
     }
 }
