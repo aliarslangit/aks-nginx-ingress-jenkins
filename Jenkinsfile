@@ -47,27 +47,6 @@ pipeline {
                 }
          }
 
-    stage('Build Docker Image')
-        {
-            steps{
-                    sh 'sudo docker build -t aliarslanmushtaq/nodejs-microservice:V'+"$BUILD_NUMBER"+ ' . '
-                 }
-        }
-    stage('Docker Login')
-        {
-            steps{
-                    withCredentials([usernamePassword(credentialsId: 'docker', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-                    sh 'sudo docker login  -u $USERNAME -p $PASSWORD'
-                }
-        }
-        }
-
-
-       stage('Push image') {
-           steps{
-                    sh 'sudo docker push aliarslanmushtaq/nodejs-microservice:V' +"$BUILD_NUMBER"
-                }
-       }
        stage('Deploying application')
        {
            steps{
