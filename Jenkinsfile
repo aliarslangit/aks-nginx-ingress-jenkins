@@ -1,18 +1,5 @@
 pipeline {
    agent any
-    
-  environment {
-        docker=credentials('docker')
-        registry = "aliarslanmushtaq/nodejs-microservice"
-        registryCredential = 'docker'
-        dockerImage = ''
-    }
-  
-    parameters {
-       
-        string(name: 'temp', defaultValue: 'temp', description: '')
-
-    }
     stages {
         stage('Git checkout') { 
             steps{
