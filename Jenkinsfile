@@ -20,7 +20,7 @@ pipeline {
                 git branch: 'main', credentialsId: 'github', url: 'https://github.com/aliarslangit/aks-nginx-jenkins.git'
         }
         }
-    stage('Installing Azure Modules') {
+    stage('Installing Azure Modules/CLI') {
             steps {
                     sh 'bash scripts/azcli.sh'
                 }
